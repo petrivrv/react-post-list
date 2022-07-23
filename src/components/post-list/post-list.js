@@ -2,11 +2,13 @@ import React from 'react';
 import './post-list.css'
 import PostListItem from '../post-list-item/post-list-item'; 
 
-const PostList =({posts}) => {
-    const elem = posts.map( item => {
+const PostList =(props) => {
+    const elem = props.posts.map( item => {
         return (
             <li key={item.id} className='list-group-item'>
-                <PostListItem label={item.label} important={item.important} />
+                <PostListItem label={item.label} 
+                    important={item.important}
+                    onDelete={()=>props.onDelete(item.id)} />
             </li>
         )
     })
