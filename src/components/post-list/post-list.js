@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './post-list.css'
 import PostListItem from '../post-list-item/post-list-item'; 
 
 const PostList =(props) => {
+    //console.log(useState(0) );
     const elem = props.posts.map( item => {
         return (
             <li key={item.id} className='list-group-item'>
